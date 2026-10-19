@@ -1,0 +1,24 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+project     = "expense"
+environment = "dev"
+location    = "francecentral"
+
+vnet_address_space = ["10.10.0.0/16"]
+appgw_subnet_cidr  = "10.10.0.0/24"
+app_subnet_cidr    = "10.10.2.0/23"
+data_subnet_cidr   = "10.10.4.0/24"
+
+enable_nat_gateway   = true
+create_nat_public_ip = false
+
+tags = {
+  project     = "expense-reimbursement"
+  environment = "dev"
+  managed_by  = "terraform"
+}
+
+app_service_plan_sku = "B1"
+
+enable_eventgrid_topic        = true
+enable_eventgrid_subscription = false
